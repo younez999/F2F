@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F2F Login</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Container for the UI */
+        .container {
+            width: 100%;
+            max-width: 400px; /* Typical mobile screen width */
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Logo styling */
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Styling for the buttons */
+        .button-container a button {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            width: 100%;
+            color: white;
+        }
+
+        /* Specific styles for each button */
+        .buyer-btn {
+            background-color: #4CAF50;
+        }
+
+        .buyer-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .farmer-btn {
+            background-color: #008CBA;
+        }
+
+        .farmer-btn:hover {
+            background-color: #007bb5;
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 400px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .logo {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .button-container a button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- UI Container -->
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">F2F</div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <a href="buyer.html"><button class="buyer-btn">Log in as Buyer</button></a>
+            <a href="farmer.html"><button class="farmer-btn">Log in as Farmer</button></a>
+        </div>
+    </div>
+
+</body>
+</html>
