@@ -131,6 +131,69 @@
             transform: scale(1.05);
         }
 
+        /* Add Listing Form Modal */
+        #addListingForm {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #addListingForm .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #addListingForm h2 {
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        #addListingForm label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        #addListingForm input[type="text"],
+        #addListingForm input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        #addListingForm button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #addListingForm .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            margin-right: 10px;
+        }
+
+        #addListingForm .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 400px) {
             .container {
@@ -155,10 +218,36 @@
                 font-size: 14px;
                 padding: 10px;
             }
+
+            #addListingForm .submit-btn,
+            #addListingForm .cancel-btn {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Add Listing Form Modal -->
+    <div id="addListingForm">
+        <div class="form-container">
+            <h2>Add New Listing</h2>
+            <form id="listingForm">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+
+                <label for="productLocation">Location:</label>
+                <input type="text" id="productLocation" name="productLocation" placeholder="e.g., Chengdu" required>
+
+                <label for="productImage">Upload Image:</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*" required>
+
+                <button type="submit" class="submit-btn">Add Listing</button>
+                <button type="button" id="cancelBtn" class="cancel-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
 
     <!-- UI Container -->
     <div class="container">
@@ -169,28 +258,19 @@
         <div class="logo">F2F</div>
 
         <!-- Listings -->
-        <div class="listings">
-            <div class="listing-item">
-                <h3>Organic Tomatoes</h3>
-                <p>Location: Chengdu</p>
-            </div>
-            <div class="listing-item">
-                <h3>Fresh Lettuce</h3>
-                <p>Location: Shenzhen</p>
-            </div>
-            <div class="listing-item">
-                <h3>Honey Jars</h3>
-                <p>Location: Wuhan</p>
-            </div>
-            <!-- Add more listings as needed -->
+        <div class="listings" id="listings">
+            <!-- Listings will be dynamically loaded here by farmer.js -->
         </div>
 
         <!-- Add Listing Button -->
-        <button class="add-listing-btn" onclick="window.location.href='add_listing_farmer.html'">Add New Listing</button>
+        <button class="add-listing-btn">Add New Listing</button>
 
         <!-- Track Orders Button -->
         <button class="track-orders-btn" onclick="window.location.href='track_orders_farmer.html'">Track Orders</button>
     </div>
+
+    <!-- Include farmer.js -->
+    <script src="farmer.js"></script>
 
 </body>
 </html>

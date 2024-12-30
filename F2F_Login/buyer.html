@@ -239,19 +239,19 @@
                 <img src="images/apples.jpeg" alt="Fresh Apples">
                 <h3>Fresh Apples</h3>
                 <p>Location: Beijing</p>
-                <button class="place-order-btn" onclick="placeOrder('Fresh Apples')">Place Order</button>
+                <button class="place-order-btn">Place Order</button>
             </div>
             <div class="product-item">
                 <img src="images/carrots.jpeg" alt="Organic Carrots">
                 <h3>Organic Carrots</h3>
                 <p>Location: Shanghai</p>
-                <button class="place-order-btn" onclick="placeOrder('Organic Carrots')">Place Order</button>
+                <button class="place-order-btn">Place Order</button>
             </div>
             <div class="product-item">
                 <img src="images/eggs.jpeg" alt="Free-Range Eggs">
                 <h3>Free-Range Eggs</h3>
                 <p>Location: Guangzhou</p>
-                <button class="place-order-btn" onclick="placeOrder('Free-Range Eggs')">Place Order</button>
+                <button class="place-order-btn">Place Order</button>
             </div>
             <!-- Add more products as needed -->
         </div>
@@ -260,35 +260,8 @@
         <button class="track-orders-btn" onclick="window.location.href='track_orders_buyer.html'">Track Orders</button>
     </div>
 
-    <script>
-        // Get modal elements
-        var modal = document.getElementById("orderModal");
-        var modalClose = document.getElementById("modalClose");
-        var orderMessage = document.getElementById("orderMessage");
-
-        // Function to open modal with specific message
-        function placeOrder(productName) {
-            orderMessage.textContent = `Your order for "${productName}" has been placed successfully!`;
-            modal.style.display = "block";
-        }
-
-        // Function to close modal
-        function closeModal() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        modalClose.onclick = function() {
-            closeModal();
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
+    <!-- Include buyer.js -->
+    <script src="buyer.js"></script>
 
 </body>
 </html>
