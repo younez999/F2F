@@ -22,6 +22,7 @@ function placeOrder(productName) {
     showConfirmation(order);
 }
 
+
 // Function to show confirmation modal
 function showConfirmation(order) {
     // Get modal elements

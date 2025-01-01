@@ -28,18 +28,52 @@
             width: 100%;
             max-width: 400px; /* Typical mobile screen width */
             background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 40px; /* Rounded corners to resemble a phone */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
             padding: 40px 20px;
             text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 5px;
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+
+        .container:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+        }
+
+        .container:active {
+            transform: scale(0.98);
         }
 
         /* Logo styling */
         .logo {
-            font-size: 36px;
+            font-size: clamp(24px, 8vw, 36px);
             font-weight: bold;
             margin-bottom: 40px;
             color: #333;
+            user-select: none;
         }
 
         /* Button container */
@@ -47,19 +81,28 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            padding: 0 10px;
         }
 
         /* Styling for the buttons */
         .button-container a button {
-            padding: 15px;
-            font-size: 16px;
+            padding: 16px;
+            font-size: 18px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
             text-decoration: none;
             width: 100%;
             color: white;
+            position: relative;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        .button-container a button:active {
+            transform: scale(0.95);
+            background-color: #0056b3;
         }
 
         /* Specific styles for each button */
@@ -95,6 +138,21 @@
             .button-container a button {
                 font-size: 14px;
                 padding: 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .button-container {
+                gap: 15px;
+            }
+            
+            .button-container a button {
+                padding: 14px;
+                font-size: 16px;
             }
         }
     </style>
